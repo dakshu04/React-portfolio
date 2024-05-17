@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { PROJECTS } from "../constants";
 
 export default function Projects() {
