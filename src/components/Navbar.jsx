@@ -3,7 +3,8 @@ import logo from "../assets/DakshPurohitLogo.png";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa";
+import { IoMdContact } from "react-icons/io";
+
 import { motion } from "framer-motion"
 export const Navbar = () => {
   return (
@@ -18,10 +19,10 @@ export const Navbar = () => {
         </div>
 
         <div className="m-8 flex items-center justify-center gap-4 text-2xl">
-            <FaLinkedin />
-            <FaGithub />
-            <FaInstagram />
-            <FaSquareXTwitter />
+            <a href="https://www.linkedin.com/in/purohitdaksh/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+            <a href="https://github.com/dakshu04" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+            <a href="https://x.com/DakshPurohit_03" target="_blank" rel="noopener noreferrer"><FaSquareXTwitter /></a>
+            <a href="mailto:purohitdaksh2003@gmail.com" target="_blank" rel="noopener noreferrer"><IoMdContact /></a>
         </div>
     </nav>
   )
