@@ -1,15 +1,9 @@
 
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
-import getProjectLink from "../Links/getProjectLink";
 
 
 export default function Projects() {
-  // Inside your component
-const handleClick = (title) => {
-  const link = getProjectLink(title);
-  window.open(link, "_blank");
-};
   return (
     <div className="border-b border-neutral-900 pb-4"> 
     <motion.h1
@@ -34,14 +28,25 @@ const handleClick = (title) => {
                     initial = {{ opacity: 0, x: +100 }}
                     transition={{ duration: 1 }} 
                     className="w-full max-w-xl lg:w-3/4">
-                      <div>
+                      <div className="flex items-center mb-2">
                        <div className="w-1/2">
-                        <h6 onClick={() => handleClick(project.title)} className="mb-2 font-semibold cursor-pointer">
-                          {project.title}
+                        <h6 className="mb-2 font-semibold cursor-pointer">
+                          <a 
+                          href={project.getProjectLink} 
+                          target="_blank"
+                          rel="noopener noreferrer">{project.title}</a>
                           </h6></div>
-                          <div className="w-1/2">
-                            <h2 className="font-semibold">Source Code</h2>
-                          </div>
+                          
+                      <div className="w-1/2">
+                        <a
+                        href={project.sourceCodeLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-blue-500 cursor-pointer"
+                        >
+                    Source Code
+                  </a>
+                </div>
                         </div>
                         <p className="mb-4 text-neutral-400">{project.description}</p>
                         {project.technologies.map((tech, index) => (
