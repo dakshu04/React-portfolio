@@ -1,8 +1,15 @@
 
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
+import getProjectLink from "../Links/getProjectLink";
+
 
 export default function Projects() {
+  // Inside your component
+const handleClick = (title) => {
+  const link = getProjectLink(title);
+  window.open(link, "_blank");
+};
   return (
     <div className="border-b border-neutral-900 pb-4"> 
     <motion.h1
@@ -27,7 +34,15 @@ export default function Projects() {
                     initial = {{ opacity: 0, x: +100 }}
                     transition={{ duration: 1 }} 
                     className="w-full max-w-xl lg:w-3/4">
-                        <h6 className="mb-2 font-semibold">{project.title}</h6>
+                      <div>
+                       <div className="w-1/2">
+                        <h6 onClick={() => handleClick(project.title)} className="mb-2 font-semibold cursor-pointer">
+                          {project.title}
+                          </h6></div>
+                          <div className="w-1/2">
+                            <h2 className="font-semibold">Source Code</h2>
+                          </div>
+                        </div>
                         <p className="mb-4 text-neutral-400">{project.description}</p>
                         {project.technologies.map((tech, index) => (
                             <span key={index} className="mr-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-900">
