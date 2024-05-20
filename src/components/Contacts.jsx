@@ -2,6 +2,7 @@
 import {CONTACT } from "../constants";
 import { motion } from "framer-motion";
 
+
 export default function Contacts() {
   return (
     <div className="border-b border-neutral-900 pb-20">
