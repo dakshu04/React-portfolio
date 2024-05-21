@@ -1,4 +1,4 @@
-import  aboutImg  from "../assets/about.png";
+import aboutImg from "../assets/aboutImg.jpg"; 
 import { ABOUT_TEXT } from "../constants";
 import { easeInOut, motion } from "framer-motion";
 
