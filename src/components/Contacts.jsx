@@ -22,7 +22,7 @@ export default function Contacts() {
         whileInView={{ opacity: 1, x: 0}}
         initial = {{ opacity: 0, x: +100 }}
         transition={{ duration: 1 }} 
-        className="m-4">{CONTACT.phoneNo}</motion.p>
+        className="m-4">{CONTACT.phoneNo} (M)</motion.p>
 
         <a href="#" className="border-b">{CONTACT.email}</a>
       </div>
